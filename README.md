@@ -3,7 +3,7 @@
 ![Rentable](https://mms.businesswire.com/media/20210803005327/en/895740/23/Rentable_Logo.jpg)
 
 ### Overview:
-- This project is a script that parses XML data from a file, extracts relevant information about Rentable properties, and stores it in a DynamoDB database. The application also fetches weather data for each property from the National Weather Service API and updates the database with the retrieved weather data. 
+- This project is a script that parses XML data from a file, extracts relevant information about Rentable properties, and stores it in a DynamoDB database. The application also fetches weather data for each property from the [National Weather Service API](https://www.weather.gov/documentation/services-web-api) and updates the database with the retrieved weather data. 
 
 ### Requirements:
 - For Python
