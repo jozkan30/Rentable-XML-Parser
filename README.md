@@ -7,7 +7,7 @@
 
 ### Requirements:
 - For Python
-    - Boto3 library for interacting with DynamoDB
+    - [Boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html) library for interacting with DynamoDB
     - Requests library for making HTTP requests
     - [Xml.etree.ElementTree](https://docs.python.org/3/library/xml.etree.elementtree.html) library for parsing XML data
     - Json library for parsing JSON data
@@ -39,8 +39,8 @@ aws_secret_access_key = YOUR_SECRET_ACCESS_KEY
     * city
     * weather
 
-### Getting Started with Python:
-1. Install the required libraries: `pip install boto3 requests xml.etree.ElementTree json`
+### Getting Started with Ruby:
+1. Install the required libraries: `gem install aws-sdk-dynamodb nokogiri open-uri json`
 2. Set up your [AWS credentials](https://docs.aws.amazon.com/keyspaces/latest/devguide/access.credentials.html) by creating a file named `~/.aws/credentials` with the following format:
 ``` 
 [default]
@@ -60,7 +60,7 @@ aws_secret_access_key = YOUR_SECRET_ACCESS_KEY
     * city
     * weather
 
-Notes:
+# Notes:
 
 * Make sure to replace YOUR_ACCESS_KEY_ID and YOUR_SECRET_ACCESS_KEY with your actual AWS credentials.
 * The script assumes that the XML file rentable_input_data.xml is located in the same directory as the script.
