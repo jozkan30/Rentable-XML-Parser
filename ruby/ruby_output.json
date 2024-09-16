@@ -1,0 +1,16 @@
+[
+  {
+    "property_id": "2222",
+    "name": "ABODO",
+    "email": "leads@abodo.com",
+    "bedrooms": "3.0",
+    "weather": "Mostly sunny, with a high near 85. South southeast wind around 10 mph."
+  },
+  {
+    "property_id": "1111",
+    "name": "ABODO",
+    "email": "leads@abodo.com",
+    "bedrooms": "3.0",
+    "weather": "Mostly sunny, with a high near 85. South southeast wind around 10 mph."
+  }
+]

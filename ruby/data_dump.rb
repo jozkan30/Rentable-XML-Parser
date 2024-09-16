@@ -74,9 +74,7 @@ def main
   file_path = 'ruby/rentable_input_data.xml'
   root = parse_xml_file(file_path)
   properties = get_properties(root)
-  puts "Total properties: #{properties.size}"
   filtered_properties = filter_properties_by_city(properties, 'Madison')
-  puts "Total properties in city: #{filtered_properties.size}"
   write_to_json(filtered_properties, 'ruby/ruby_output.json')
 end
 

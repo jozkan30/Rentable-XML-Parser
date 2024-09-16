@@ -62,12 +62,11 @@ def write_to_json(data, file_path):
         json.dump(data, jsonfile, indent=2)
 
 def main():
+
     file_path = 'python/rentable_input_data.xml'
     root = parse_xml_file(file_path)
     properties = get_properties(root)
-    print("Total properties:", len(properties))
     filtered_properties = filter_properties_by_city(properties, 'Madison')
-    print("Total properties in city:", len(filtered_properties))
     write_to_json(filtered_properties, 'python/python_output.json')
 
 if __name__ == '__main__':
