@@ -47,9 +47,9 @@ def filter_properties_by_city(properties, city)
   properties.each do |prop|
     data = extract_property_data(prop)
     if data['city'] == city
-      weather = get_weather(data['latitude'], data['longitude'])
       property_id = data['property_id']
       if !filtered_properties.key?(property_id)
+        weather = get_weather(data['latitude'], data['longitude'])
         filtered_properties[property_id] = {
           'property_id' => property_id,
           'name' => data['name'],
@@ -74,7 +74,9 @@ def main
   file_path = 'ruby/rentable_input_data.xml'
   root = parse_xml_file(file_path)
   properties = get_properties(root)
+  puts "Total properties: #{properties.length}"
   filtered_properties = filter_properties_by_city(properties, 'Madison')
+  puts "Total properties in city: #{filtered_properties.length}"
   write_to_json(filtered_properties, 'ruby/ruby_output.json')
 end
 

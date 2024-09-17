@@ -21,6 +21,7 @@ def add_properties_to_table():
 
     end_time = time.time()
     run_time = end_time - start_time
+
     print(f'Run completed in {run_time:.2f} seconds')
 
 add_properties_to_table()
