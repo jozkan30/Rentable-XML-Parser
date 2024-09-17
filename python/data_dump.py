@@ -2,7 +2,6 @@ import xml.etree.ElementTree as ET
 import json
 from get_weather import get_weather
 
-
 def parse_xml_file(file_path):
     # Grab file from directory. If the link to didn't have an error, we would have imported requests and added "https://s3.amazonaws.com/abodo-misc/sample_abodo_feed.xml" as the endpoint.
     tree = ET.parse(file_path)
