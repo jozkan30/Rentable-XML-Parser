@@ -41,12 +41,13 @@ def extract_property_data(property_element):
 def filter_properties_by_city(properties, city):
     # Define a function for filtering by city. In this case using Madison. Fetch the weather after.
     filtered_properties = {}
+    print(f"Searching XML for City: {city}")
     for prop in properties:
         data = extract_property_data(prop)
         if data['city'] == city:
-            weather = get_weather(data['latitude'], data['longitude'])
             property_id = data['property_id']
             if property_id not in filtered_properties:
+                weather = get_weather(data['latitude'], data['longitude'])
                 filtered_properties[property_id] = {
                     'property_id': property_id,
                     'name': data['name'],
@@ -62,12 +63,12 @@ def write_to_json(data, file_path):
         json.dump(data, jsonfile, indent=2)
 
 def main():
-
     file_path = 'python/rentable_input_data.xml'
     root = parse_xml_file(file_path)
     properties = get_properties(root)
+    print("Total properties:", len(properties))
     filtered_properties = filter_properties_by_city(properties, 'Madison')
+    print("Total properties in city:", len(filtered_properties))
     write_to_json(filtered_properties, 'python/python_output.json')
-
 if __name__ == '__main__':
     main()

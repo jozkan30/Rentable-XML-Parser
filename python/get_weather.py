@@ -1,6 +1,6 @@
 import requests
-import json
-# Pull weather data based on Longitude and Latitude from XML. From response pull endpoint for 12 hour forecasts for the next 7 days. From this response pull today's weather as string value 
+# Pull weather data based on Longitude and Latitude from XML. From response pull endpoint for 12 hour forecasts for the next 7 days. From this response pull today's weather as string value
+
 def get_weather(lat, long):
     url =  f'https://api.weather.gov/points/{lat},{long}'
     print(f'Fetching Weather for location {lat}, {long}')

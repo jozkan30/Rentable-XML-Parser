@@ -47,7 +47,7 @@ aws_secret_access_key = YOUR_SECRET_ACCESS_KEY
 aws_access_key_id = YOUR_ACCESS_KEY_ID
 aws_secret_access_key = YOUR_SECRET_ACCESS_KEY
 ```
-3. Create a [DynamoDB](https://aws.amazon.com/dynamodb/) table named 'retable_properties'
+3. Create a [DynamoDB](https://aws.amazon.com/dynamodb/) table named 'properties'
 
 ### Usage Ruby:
 1. After dependecies are installed, to dump data locally run `ruby ruby/data_dump.rb ` This should dump a JSON object to the locally directory under the file name 'ruby_output.json'. 
