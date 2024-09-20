@@ -1,0 +1,26 @@
+{
+  "mapping": {
+    "property_id": "PROP5432",
+    "name": "Lakeview Luxury Living",
+    "email": "info@lakeviewapts.com",
+    "city": "Lakeside",
+    "bedrooms": 1,
+    "weather": "A slight chance of rain showers before 5pm. Mostly sunny, with a high near 75. South wind 0 to 10 mph. Chance of precipitation is 20%. New rainfall amounts less than a tenth of an inch possible."
+  },
+  "properties": [
+    {
+      "property_id": "2222",
+      "name": "ABODO",
+      "email": "leads@abodo.com",
+      "bedrooms": "3.0",
+      "weather": "Sunny, with a high near 79. West wind 5 to 10 mph."
+    },
+    {
+      "property_id": "1111",
+      "name": "ABODO",
+      "email": "leads@abodo.com",
+      "bedrooms": "3.0",
+      "weather": "Sunny, with a high near 79. West wind 5 to 10 mph."
+    }
+  ]
+}
