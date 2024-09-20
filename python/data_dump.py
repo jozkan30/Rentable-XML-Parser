@@ -12,9 +12,34 @@ def get_properties(root):
     properties = root.findall('.//Property')
     return properties
 
+def _fetch_json():
+    path  = 'python/rentable_sample.json'
+    with open(path, 'r') as file:
+        return json.load(file)
+
+# Map additional data source
+def map_json():
+    data = _fetch_json()
+    id = data['property'].get('name','')
+    clean_id = id.split('/')[1]
+    name = data['property']['details'].get('marketingName')
+    email = data['property']['details'].get('email')
+    city = data['propertyManagement']['contact']['address'].get('city')
+    bedrooms = data['property']['floorplans'][0]['bedrooms']
+    coordinates = data['property']['geolocation']
+    latitude, longitude = coordinates.get('latitude', {}), coordinates.get('longitude', {})
+    weather  = get_weather(latitude, longitude)
+    return {
+        'property_id': clean_id,
+        'name': name,
+        'email': email,
+        'city': city,
+        'bedrooms': bedrooms,
+        'weather': weather
+    }
+
 def extract_property_data(property_element):
     # Extract values for dump defined in task excercise.
-    # import ipdb; ipdb.set_trace()
     property_id = property_element.find('.//PropertyID/Identification').attrib.get('IDValue')
     name = property_element.find('.//PropertyID/MarketingName').text
     email = property_element.find('.//PropertyID/Email').text
@@ -67,7 +92,14 @@ def main():
     properties = get_properties(root)
     print("Total properties:", len(properties))
     filtered_properties = filter_properties_by_city(properties, 'Madison')
-    print("Total properties in city:", len(filtered_properties))
-    write_to_json(filtered_properties, 'python/python_output.json')
+    print("Total properties in city from XML:", len(filtered_properties))
+    print("Adding additoinal data source")
+    map = map_json()
+    output_data = {
+        'mapping': map,
+        'properties': filtered_properties
+    }
+    write_to_json(output_data, 'python/python_output.json')
+
 if __name__ == '__main__':
     main()

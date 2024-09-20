@@ -1,0 +1,30 @@
+{
+    "landlords": {
+        "landlord_1": {
+            "name": "Landlord 1",
+            "xml_file_path": "python/rentable_input_data.xml",
+            "city": "madison",
+            "properties": ".//Property",
+            "property_data": {
+                "property_id": ".//PropertyID/Identification",
+                "name": ".//PropertyID/MarketingName",
+                "email": ".//PropertyID/Email",
+                "bedrooms": ".//Floorplan/Room/Count",
+                "city": ".//PropertyID/Address/City"
+            }
+        },
+
+        "landlord_2": {
+            "name": "Landlord 2",
+            "xml_file_path": "path/to/landlord_2.xml",
+            "properties": "/root/properties/property",
+            "property_data": {
+                "property_id": "/property/@id",
+                "name": "/property/name",
+                "email": "/property/email",
+                "bedrooms": "/property/bedrooms",
+                "city": "/property/address"
+            }
+        }
+    }
+}
